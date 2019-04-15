@@ -1,0 +1,28 @@
+class App extends React.Component {
+  click = (e)=>{
+    alert(e)
+  }
+  render(){
+    return (
+      <div className="App">
+        <h1>Hello CodeSandbox</h1>
+        <h2>Start editing to see some magic happen!</h2>
+        <Button click={this.click}>
+          <h2>Click Me</h2>
+        </Button>
+      </div>
+    );
+  }
+}
+
+function Button(props){
+  return(
+    <React.Fragment>
+    {props.children}
+    <button onClick={()=>props.click('kat')}>Click</button>
+    </React.Fragment>
+  )
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
