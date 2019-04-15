@@ -1,0 +1,28 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
+
+class App extends React.Component {
+  click = (e)=>{
+    alert(e)
+  }
+  render(){
+    return (
+      <div className="App">
+        <h1>Hello CodeSandbox</h1>
+        <h2>Start editing to see some magic happen!</h2>
+        <Button click={this.click}/>
+      </div>
+    );
+  }
+}
+
+//arrow functions
+function Button(props){
+  return(
+    <button onClick={()=>props.click('kat')}>Click</button>
+  )
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
